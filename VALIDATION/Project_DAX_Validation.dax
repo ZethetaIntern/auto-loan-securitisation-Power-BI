@@ -1,0 +1,333 @@
+﻿EVALUATE
+ROW(
+    "Total Loans", DISTINCTCOUNT('auto_loan_securitisation_data'[LoanID]),
+    "Total Outstanding", SUM('auto_loan_securitisation_data'[CurrentBalance]),
+    "Original Balance", [Original Balance]
+)
+
+EVALUATE
+ROW(
+    "3M Avg 30Plus DPD Rate",
+    [3M Avg 30Plus DPD Rate]
+)
+
+EVALUATE
+ROW(
+    "Total Loans", DISTINCTCOUNT('auto_loan_securitisation_data'[LoanID]),
+    "Total Outstanding", SUM('auto_loan_securitisation_data'[CurrentBalance]),
+    "3M Avg 30Plus DPD Rate", [3M Avg 30Plus DPD Rate],
+    "ECL", [ECL]
+)
+
+EVALUATE
+ROW(
+    "Total EAD", [Total EAD],
+    "12M PD", [12M PD],
+    "LGD", [LGD],
+    "ECL", [ECL]
+)
+
+--  Portfolio KPIs
+EVALUATE
+ROW(
+    "Total Loans", DISTINCTCOUNT('auto_loan_securitisation_data'[LoanID]),
+    "Total Outstanding", SUM('auto_loan_securitisation_data'[CurrentBalance]),
+    "Original Balance", [Original Balance],
+    "Total Collection", [Total Collections]
+)
+
+-- DPD Performance
+EVALUATE
+ROW(
+    "30Plus DPD Balance", [30Plus DPD Balance],
+    "30Plus DPD Rate", [30Plus DPD Rate],
+    "3M Avg 30Plus DPD Rate", [3M Avg 30Plus DPD Rate],
+    "12M Avg 30Plus DPD Rate", [12M Avg 30Plus DPD Rate]
+)
+
+-- ECL Components
+EVALUATE
+ROW(
+    "Total EAD", [Total EAD],
+    "12M PD", [12M PD],
+    "LGD", [LGD],
+    "12M ECL Stage 1", [12M ECL Stage 1],
+    "ECL", [ECL]
+)
+
+-- ECL Stage Analysis
+EVALUATE
+SUMMARIZECOLUMNS(
+    'auto_loan_securitisation_data'[IFRS9_Stage],
+    "EAD", [Total EAD],
+    "ECL", [ECL]
+)
+
+-- Net Loss Trend
+EVALUATE
+ROW(
+    "Monthly Net Loss Rate", [Monthly Net Loss Rate],
+    "Rolling 3M Net Loss Rate", [Rolling 3M Net Loss Rate],
+    "Rolling 12M Net Loss Rate", [Rolling 12M Net Loss Rate]
+)
+
+-- Vehicle Portfolio
+EVALUATE
+SUMMARIZECOLUMNS(
+    'DimVehicle'[VehicleType],
+    "Outstanding", [Total Outstanding],
+    "Portfolio Share", [Vehicle Portfolio Share],
+    "Portfolio Rank", [Vehicle Portfolio Rank]
+)
+
+-- Waterfall Validation
+EVALUATE
+ROW(
+    "Waterfall Allocation Check", [Waterfall Allocation Check],
+    "Senior Tranche Allocation", [Senior Tranche Allocation],
+    "Mezzanine Tranche Allocation", [Mezzanine Tranche Allocation],
+    "Senior Credit Enhancement", [Senior Credit Enhancement],
+    "Senior OC Ratio", [Senior OC Ratio],
+    "Senior OC Trigger Status", [Senior OC Trigger Status]
+)
+
+-- Stress Testing
+EVALUATE
+ROW(
+    "Base ECL", [Base ECL],
+    "Moderate Stress ECL", [Moderate Stress ECL],
+    "Severe Stress ECL", [Severe Stress ECL],
+    "Crisis ECL", [Crisis ECL],
+    "Stress Adjusted ECL", [Stress Adjusted ECL]
+)
+
+-- DAX Measure Dictionary 
+SELECT
+      [Name],
+      [Expression],
+      [Description],
+      [TableID]
+FROM $SYSTEM. TMSCHEMA_MEASURES ORDER BY [Name]
+
+-- all Tables
+SELECT
+    [ID],
+    [Name],
+    [Description],
+    [IsHidden]
+FROM $SYSTEM.TMSCHEMA_TABLES
+ORDER BY [Name]
+
+-- ALL Relationship
+SELECT
+    [ID],
+    [FromTableID],
+    [FromColumnID],
+    [ToTableID],
+    [ToColumnID],
+    [IsActive]
+FROM $SYSTEM.TMSCHEMA_RELATIONSHIPS
+ORDER BY [ID]
+      
+ -- Vehicle Portfolio Validation
+ EVALUATE
+SUMMARIZECOLUMNS(
+    'DimVehicle'[VehicleType],
+    "Loans", [Total Loans],
+    "Outstanding", [Total Outstanding],
+    "Share", [Vehicle Portfolio Share],
+    "Rank", [Vehicle Portfolio Rank]
+)
+ORDER BY [Outstanding] DESC
+
+-- Loss Validation
+SELECT
+    [Name]
+FROM $SYSTEM.TMSCHEMA_MEASURES
+ORDER BY [Name]
+
+-- PORTFOLIO & COLLECTION KPIs
+
+EVALUATE
+ROW(
+    "Total Loans", [Total Loans],
+    "Total Outstanding", [Total Outstanding],
+    "Original Balance", [Original Balance],
+    "Total Collections", [Total Collections],
+    "Total Loss Amount", [Total Loss Amount],
+    "Total Net Loss", [Total Net Loss],
+    "Total Recovery Amount", [Total Recovery Amount],
+    "Total Prepayment Amount", [Total Prepayment Amount]
+  )
+
+  
+  -- Portfolio Status
+EVALUATE
+ROW(
+    "Current Balance", [Current Balance],
+    "Active Loans", [Active Loans],
+    "Defaulted Loans", [Defaulted Loans],
+    "Defaulted Balance", [Defaulted Balance],
+    "Default Rate", [Default Rate]
+ )
+
+    
+-- DPD PERFORMANCE
+EVALUATE
+ROW(
+    "30Plus DPD Balance", [30Plus DPD Balance],
+    "30Plus DPD Rate", [30Plus DPD Rate],
+    "60Plus DPD Balance", [60Plus DPD Balance],
+    "60Plus DPD Rate", [60Plus DPD Rate],
+    "90Plus DPD Balance", [90Plus DPD Balance],
+    "120Plus DPD Balance", [120Plus DPD Balance]
+)
+
+-- DPD Trends
+EVALUATE
+ROW(
+    "3M Avg 30Plus DPD Rate", [3M Avg 30Plus DPD Rate],
+    "12M Avg 30Plus DPD Rate", [12M Avg 30Plus DPD Rate],
+    "3M Avg 30Plus DPD Rate Trend", [3M Avg 30Plus DPD Rate Trend],
+    "30Plus DPD Trend Alert", [30Plus DPD Trend Alert],
+    "DPD Trend Direction", [DPD Trend Direction]
+)
+   
+-- IFRS 9 / ECL
+EVALUATE
+ROW(
+    
+    "Total EAD", [Total EAD],
+    "12M PD", [12M PD],
+    "LGD", [LGD],
+    "ECL", [ECL],
+    "Lifetime ECL", [Lifetime ECL],
+    "12M ECL Stage 1", [12M ECL Stage 1],
+    "Total ECL Provision", [Total ECL Provision]
+)
+-- STRESS TESTING
+EVALUATE
+ROW(
+    "Base ECL", [Base ECL],
+    "Moderate Stress ECL", [Moderate Stress ECL],
+    "Severe Stress ECL", [Severe Stress ECL],
+    "Crisis ECL", [Crisis ECL],
+    "Stress Adjusted ECL", [Stress Adjusted ECL],
+    "Stress Adjusted LGD", [Stress Adjusted LGD],
+    "Stress Scenario ECL", [Stress Scenario ECL],
+    "Stress Delinquency Trigger Proximity",
+        [Stress Delinquency Trigger Proximity]
+)
+   
+-- LOSS & RECOVERY
+EVALUATE
+ROW(
+    "Cumulative Loss Rate", [Cumulative Loss Rate],
+    "Monthly Net Loss Rate", [Monthly Net Loss Rate],
+    "Rolling 3M Net Loss Rate", [Rolling 3M Net Loss Rate],
+    "Rolling 12M Net Loss Rate", [Rolling 12M Net Loss Rate],
+    "Recovery Rate", [Recovery Rate]
+)
+    
+-- PREPAYMENT
+EVALUATE
+ROW(
+    "Prepayment Rate", [Prepayment Rate],
+    "Prepaid Loans", [Prepaid Loans]
+)
+   
+-- VEHICLE PORTFOLIO / CONCENTRATION
+EVALUATE
+ROW(
+    "Portfolio HHI", [Portfolio HHI],
+    "Portfolio Concentration Flag", [Portfolio Concentration Flag],
+    "Top 3 Vehicle Portfolio", [Top 3 Vehicle Portfolio],
+    "Top 5 Vehicle Portfolio Share", [Top 5 Vehicle Portfolio Share],
+    "Vehicle Portfolio Share", [Vehicle Portfolio Share],
+    "Vehicle Portfolio Rank", [Vehicle Portfolio Rank]
+)
+    
+-- DELINQUENCY REPORTING
+EVALUATE
+ROW(
+    "DPD Report Loans", [DPD Report Loans],
+    "DPD Report Balance", [DPD Report Balance],
+    "DPD % Pool", [DPD % Pool],
+    "Delinquency Rate", [Delinquency Rate],
+    "Delinquency Trigger Status", [Delinquency Trigger Status],
+    "Serious Delinquency Rate", [Serious Delinquency Rate]
+)
+    
+-- COLLECTION / PORTFOLIO QUALITY
+EVALUATE
+ROW(
+    "Collection Efficiency", [Collection Efficiency],
+    "Average DPD Age", [Average DPD Age]
+)
+    
+-- WATERFALL & TRIGGER STATUS
+EVALUATE
+ROW(
+    "Senior Tranche Allocation", [Senior Tranche Allocation],
+    "Mezzanine Tranche Allocation", [Mezzanine Tranche Allocation],
+    "Senior Credit Enhancement", [Senior Credit Enhancement],
+    "Senior OC Ratio", [Senior OC Ratio],
+    "Senior OC Trigger Status", [Senior OC Trigger Status],
+    "Mezzanine OC Ratio", [Mezzanine OC Ratio],
+    "Mezzanine OC Trigger Status", [Mezzanine OC Trigger Status],
+    "Waterfall Allocation Check", [Waterfall Allocation Check]
+)
+
+-- ECL CROSSCHECK
+-- DAX values for Excel validation
+
+EVALUATE
+ROW(
+    "Total EAD", [Total EAD],
+    "12M PD", [12M PD],
+    "LGD", [LGD],
+    "DAX ECL", [ECL]
+)
+
+SELECT
+    [Name],
+    [Expression]
+FROM $SYSTEM.TMSCHEMA_MEASURES
+ORDER BY [Name]
+
+
+EVALUATE
+ROW(
+    "Total Collections", [Total Collections],
+    "Total Outstanding", [Total Outstanding],
+    "Senior Tranche Allocation", [Senior Tranche Allocation],
+    "Mezzanine Tranche Allocation", [Mezzanine Tranche Allocation],
+    "Equity Residual Allocation", [Equity Residual Allocation],
+    "Senior Credit Enhancement", [Senior Credit Enhancement],
+    "Senior OC Ratio", [Senior OC Ratio],
+    "Mezzanine OC Ratio", [Mezzanine OC Ratio],
+    "Waterfall Allocation Check", [Waterfall Allocation Check],
+    "Senior OC Trigger Status", [Senior OC Trigger Status],
+    "Mezzanine OC Trigger Status", [Mezzanine OC Trigger Status]
+)
+
+EVALUATE
+ROW(
+    "Total Loans", [Total Loans],
+    "Total Outstanding", [Total Outstanding],
+    "Total Collections", [Total Collections],
+    "Total Net Loss", [Total Net Loss],
+    "30Plus DPD Rate", [30Plus DPD Rate],
+    "3M Avg 30Plus DPD Rate", [3M Avg 30Plus DPD Rate],
+    "Rolling 3M Net Loss Rate", [Rolling 3M Net Loss Rate],
+    "Portfolio HHI", [Portfolio HHI],
+    "Senior Tranche Allocation", [Senior Tranche Allocation],
+    "Mezzanine Tranche Allocation", [Mezzanine Tranche Allocation],
+    "Waterfall Allocation Check", [Waterfall Allocation Check],
+    "ECL", [ECL],
+    "Lifetime ECL", [Lifetime ECL],
+    "12M ECL Stage 1", [12M ECL Stage 1],
+    "Stress Scenario ECL", [Stress Scenario ECL]
+)
+
+--

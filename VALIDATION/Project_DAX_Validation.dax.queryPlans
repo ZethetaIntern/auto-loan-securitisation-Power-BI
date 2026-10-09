@@ -1,0 +1,718 @@
+{
+  "FileFormatVersion": 3,
+  "PhysicalQueryPlanRows": [
+    {
+      "Records": null,
+      "Operation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1, 2, 3)(''[Total EAD], ''[12M PD], ''[LGD], ''[DAX ECL])",
+      "IndentedOperation": "AddColumns: IterPhyOp LogOp=AddColumns IterCols(0, 1, 2, 3)(''[Total EAD], ''[12M PD], ''[LGD], ''[DAX ECL])",
+      "Level": 0,
+      "RowNumber": 1,
+      "NextSiblingRowNumber": 63
+    },
+    {
+      "Records": null,
+      "Operation": "SingletonTable: IterPhyOp LogOp=AddColumns",
+      "IndentedOperation": "    SingletonTable: IterPhyOp LogOp=AddColumns",
+      "Level": 1,
+      "RowNumber": 2,
+      "NextSiblingRowNumber": 2
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "IndentedOperation": "    SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 3,
+      "NextSiblingRowNumber": 6
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "        ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 2,
+      "RowNumber": 4,
+      "NextSiblingRowNumber": 6
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "            Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 3,
+      "RowNumber": 5,
+      "NextSiblingRowNumber": 5
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "    SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 6,
+      "NextSiblingRowNumber": 13
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "        AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "Level": 2,
+      "RowNumber": 7,
+      "NextSiblingRowNumber": 13
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "            Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 3,
+      "RowNumber": 8,
+      "NextSiblingRowNumber": 13
+    },
+    {
+      "Records": 1,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=DistinctCount_Vertipaq #Records=1 #KeyCols=200 #ValueCols=1",
+      "IndentedOperation": "                Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=DistinctCount_Vertipaq #Records=1 #KeyCols=200 #ValueCols=1",
+      "Level": 4,
+      "RowNumber": 9,
+      "NextSiblingRowNumber": 12
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                    ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 5,
+      "RowNumber": 10,
+      "NextSiblingRowNumber": 12
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                        Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 6,
+      "RowNumber": 11,
+      "NextSiblingRowNumber": 11
+    },
+    {
+      "Records": null,
+      "Operation": "Constant: LookupPhyOp LogOp=Constant Integer 500",
+      "IndentedOperation": "                Constant: LookupPhyOp LogOp=Constant Integer 500",
+      "Level": 4,
+      "RowNumber": 12,
+      "NextSiblingRowNumber": 12
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Subtract Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=1",
+      "IndentedOperation": "    SpoolLookup: LookupPhyOp LogOp=Subtract Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=1",
+      "Level": 1,
+      "RowNumber": 13,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "        AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "Level": 2,
+      "RowNumber": 14,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": null,
+      "Operation": "OuterHashJoin: IterPhyOp LogOp=Subtract",
+      "IndentedOperation": "            OuterHashJoin: IterPhyOp LogOp=Subtract",
+      "Level": 3,
+      "RowNumber": 15,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Subtract",
+      "IndentedOperation": "                Extend_Lookup: IterPhyOp LogOp=Subtract",
+      "Level": 4,
+      "RowNumber": 16,
+      "NextSiblingRowNumber": 25
+    },
+    {
+      "Records": null,
+      "Operation": "EmptyTable: IterPhyOp LogOp=Constant",
+      "IndentedOperation": "                    EmptyTable: IterPhyOp LogOp=Constant",
+      "Level": 5,
+      "RowNumber": 17,
+      "NextSiblingRowNumber": 17
+    },
+    {
+      "Records": null,
+      "Operation": "Divide: LookupPhyOp LogOp=Divide Double",
+      "IndentedOperation": "                    Divide: LookupPhyOp LogOp=Divide Double",
+      "Level": 5,
+      "RowNumber": 18,
+      "NextSiblingRowNumber": 25
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "IndentedOperation": "                        SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "Level": 6,
+      "RowNumber": 19,
+      "NextSiblingRowNumber": 22
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                            ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 7,
+      "RowNumber": 20,
+      "NextSiblingRowNumber": 22
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "                                Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 8,
+      "RowNumber": 21,
+      "NextSiblingRowNumber": 21
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                        SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "Level": 6,
+      "RowNumber": 22,
+      "NextSiblingRowNumber": 25
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                            ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 7,
+      "RowNumber": 23,
+      "NextSiblingRowNumber": 25
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                                Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 8,
+      "RowNumber": 24,
+      "NextSiblingRowNumber": 24
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "                Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 4,
+      "RowNumber": 25,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": 1,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=1 #KeyCols=200 #ValueCols=2",
+      "IndentedOperation": "                    Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=1 #KeyCols=200 #ValueCols=2",
+      "Level": 5,
+      "RowNumber": 26,
+      "NextSiblingRowNumber": 29
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                        ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 6,
+      "RowNumber": 27,
+      "NextSiblingRowNumber": 29
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "                            Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 7,
+      "RowNumber": 28,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                    SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "Level": 5,
+      "RowNumber": 29,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                        ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 6,
+      "RowNumber": 30,
+      "NextSiblingRowNumber": 32
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                            Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 7,
+      "RowNumber": 31,
+      "NextSiblingRowNumber": 31
+    },
+    {
+      "Records": null,
+      "Operation": "Multiply: LookupPhyOp LogOp=Multiply Double",
+      "IndentedOperation": "    Multiply: LookupPhyOp LogOp=Multiply Double",
+      "Level": 1,
+      "RowNumber": 32,
+      "NextSiblingRowNumber": 63
+    },
+    {
+      "Records": null,
+      "Operation": "Multiply: LookupPhyOp LogOp=Multiply Double",
+      "IndentedOperation": "        Multiply: LookupPhyOp LogOp=Multiply Double",
+      "Level": 2,
+      "RowNumber": 33,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "            SpoolLookup: LookupPhyOp LogOp=Divide Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=BLANK",
+      "Level": 3,
+      "RowNumber": 34,
+      "NextSiblingRowNumber": 41
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "Level": 4,
+      "RowNumber": 35,
+      "NextSiblingRowNumber": 41
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "                    Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 5,
+      "RowNumber": 36,
+      "NextSiblingRowNumber": 41
+    },
+    {
+      "Records": 1,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=DistinctCount_Vertipaq #Records=1 #KeyCols=200 #ValueCols=1",
+      "IndentedOperation": "                        Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=DistinctCount_Vertipaq #Records=1 #KeyCols=200 #ValueCols=1",
+      "Level": 6,
+      "RowNumber": 37,
+      "NextSiblingRowNumber": 40
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                            ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 7,
+      "RowNumber": 38,
+      "NextSiblingRowNumber": 40
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                                Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 8,
+      "RowNumber": 39,
+      "NextSiblingRowNumber": 39
+    },
+    {
+      "Records": null,
+      "Operation": "Constant: LookupPhyOp LogOp=Constant Integer 500",
+      "IndentedOperation": "                        Constant: LookupPhyOp LogOp=Constant Integer 500",
+      "Level": 6,
+      "RowNumber": 40,
+      "NextSiblingRowNumber": 40
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Subtract Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=1",
+      "IndentedOperation": "            SpoolLookup: LookupPhyOp LogOp=Subtract Double #Records=1 #KeyCols=0 #ValueCols=1 DominantValue=1",
+      "Level": 3,
+      "RowNumber": 41,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": 1,
+      "Operation": "AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                AggregationSpool<Copy>: SpoolPhyOp #Records=1",
+      "Level": 4,
+      "RowNumber": 42,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": null,
+      "Operation": "OuterHashJoin: IterPhyOp LogOp=Subtract",
+      "IndentedOperation": "                    OuterHashJoin: IterPhyOp LogOp=Subtract",
+      "Level": 5,
+      "RowNumber": 43,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Subtract",
+      "IndentedOperation": "                        Extend_Lookup: IterPhyOp LogOp=Subtract",
+      "Level": 6,
+      "RowNumber": 44,
+      "NextSiblingRowNumber": 53
+    },
+    {
+      "Records": null,
+      "Operation": "EmptyTable: IterPhyOp LogOp=Constant",
+      "IndentedOperation": "                            EmptyTable: IterPhyOp LogOp=Constant",
+      "Level": 7,
+      "RowNumber": 45,
+      "NextSiblingRowNumber": 45
+    },
+    {
+      "Records": null,
+      "Operation": "Divide: LookupPhyOp LogOp=Divide Double",
+      "IndentedOperation": "                            Divide: LookupPhyOp LogOp=Divide Double",
+      "Level": 7,
+      "RowNumber": 46,
+      "NextSiblingRowNumber": 53
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "IndentedOperation": "                                SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "Level": 8,
+      "RowNumber": 47,
+      "NextSiblingRowNumber": 50
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                    ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 9,
+      "RowNumber": 48,
+      "NextSiblingRowNumber": 50
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "                                        Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 10,
+      "RowNumber": 49,
+      "NextSiblingRowNumber": 49
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                                SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "Level": 8,
+      "RowNumber": 50,
+      "NextSiblingRowNumber": 53
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                    ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 9,
+      "RowNumber": 51,
+      "NextSiblingRowNumber": 53
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                                        Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 10,
+      "RowNumber": 52,
+      "NextSiblingRowNumber": 52
+    },
+    {
+      "Records": null,
+      "Operation": "Extend_Lookup: IterPhyOp LogOp=Divide",
+      "IndentedOperation": "                        Extend_Lookup: IterPhyOp LogOp=Divide",
+      "Level": 6,
+      "RowNumber": 53,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": 1,
+      "Operation": "Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=1 #KeyCols=200 #ValueCols=2",
+      "IndentedOperation": "                            Spool_Iterator<SpoolIterator>: IterPhyOp LogOp=Sum_Vertipaq #Records=1 #KeyCols=200 #ValueCols=2",
+      "Level": 7,
+      "RowNumber": 54,
+      "NextSiblingRowNumber": 57
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 8,
+      "RowNumber": 55,
+      "NextSiblingRowNumber": 57
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "                                    Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 9,
+      "RowNumber": 56,
+      "NextSiblingRowNumber": 56
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "IndentedOperation": "                            SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=1 DominantValue=BLANK",
+      "Level": 7,
+      "RowNumber": 57,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "                                ProjectionSpool<ProjectFusion<Copy>>: SpoolPhyOp #Records=1",
+      "Level": 8,
+      "RowNumber": 58,
+      "NextSiblingRowNumber": 60
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "IndentedOperation": "                                    Cache: IterPhyOp #FieldCols=0 #ValueCols=1",
+      "Level": 9,
+      "RowNumber": 59,
+      "NextSiblingRowNumber": 59
+    },
+    {
+      "Records": 1,
+      "Operation": "SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "IndentedOperation": "        SpoolLookup: LookupPhyOp LogOp=Sum_Vertipaq Double #Records=1 #KeyCols=200 #ValueCols=2 DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 60,
+      "NextSiblingRowNumber": 63
+    },
+    {
+      "Records": 1,
+      "Operation": "ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "IndentedOperation": "            ProjectionSpool<ProjectFusion<Copy, Copy>>: SpoolPhyOp #Records=1",
+      "Level": 3,
+      "RowNumber": 61,
+      "NextSiblingRowNumber": 63
+    },
+    {
+      "Records": null,
+      "Operation": "Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "IndentedOperation": "                Cache: IterPhyOp #FieldCols=0 #ValueCols=2",
+      "Level": 4,
+      "RowNumber": 62,
+      "NextSiblingRowNumber": 63
+    }
+  ],
+  "LogicalQueryPlanRows": [
+    {
+      "Operation": "AddColumns: RelLogOp DependOnCols()() 0-3 RequiredCols(0, 1, 2, 3)(''[Total EAD], ''[12M PD], ''[LGD], ''[DAX ECL])",
+      "IndentedOperation": "AddColumns: RelLogOp DependOnCols()() 0-3 RequiredCols(0, 1, 2, 3)(''[Total EAD], ''[12M PD], ''[LGD], ''[DAX ECL])",
+      "Level": 0,
+      "RowNumber": 1,
+      "NextSiblingRowNumber": 31
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp MeasureRef=[Total EAD] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "    ScalarVarProxy: ScaLogOp MeasureRef=[Total EAD] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 2,
+      "NextSiblingRowNumber": 2
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp MeasureRef=[12M PD] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "    ScalarVarProxy: ScaLogOp MeasureRef=[12M PD] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 3,
+      "NextSiblingRowNumber": 3
+    },
+    {
+      "Operation": "ScalarVarProxy: ScaLogOp MeasureRef=[LGD] DependOnCols()() Double DominantValue=1",
+      "IndentedOperation": "    ScalarVarProxy: ScaLogOp MeasureRef=[LGD] DependOnCols()() Double DominantValue=1",
+      "Level": 1,
+      "RowNumber": 4,
+      "NextSiblingRowNumber": 4
+    },
+    {
+      "Operation": "Multiply: ScaLogOp MeasureRef=[ECL] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "    Multiply: ScaLogOp MeasureRef=[ECL] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 1,
+      "RowNumber": 5,
+      "NextSiblingRowNumber": 31
+    },
+    {
+      "Operation": "Multiply: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "        Multiply: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 6,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Operation": "Divide: ScaLogOp MeasureRef=[12M PD] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "            Divide: ScaLogOp MeasureRef=[12M PD] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 3,
+      "RowNumber": 7,
+      "NextSiblingRowNumber": 15
+    },
+    {
+      "Operation": "Calculate: ScaLogOp MeasureRef=[Defaulted Loans] DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "                Calculate: ScaLogOp MeasureRef=[Defaulted Loans] DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 8,
+      "NextSiblingRowNumber": 14
+    },
+    {
+      "Operation": "DistinctCount_Vertipaq: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "IndentedOperation": "                    DistinctCount_Vertipaq: ScaLogOp DependOnCols()() Integer DominantValue=BLANK",
+      "Level": 5,
+      "RowNumber": 9,
+      "NextSiblingRowNumber": 11
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 1-1 RequiredCols()()",
+      "IndentedOperation": "                        Scan_Vertipaq: RelLogOp DependOnCols()() 1-1 RequiredCols()()",
+      "Level": 6,
+      "RowNumber": 10,
+      "NextSiblingRowNumber": 10
+    },
+    {
+      "Operation": "Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "IndentedOperation": "                    Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "Level": 5,
+      "RowNumber": 11,
+      "NextSiblingRowNumber": 14
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "IndentedOperation": "                        Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "Level": 6,
+      "RowNumber": 12,
+      "NextSiblingRowNumber": 12
+    },
+    {
+      "Operation": "'auto_loan_securitisation_data'[IsDefaulted]: ScaLogOp DependOnCols(0)('auto_loan_securitisation_data'[IsDefaulted]) Boolean DominantValue=NONE",
+      "IndentedOperation": "                        'auto_loan_securitisation_data'[IsDefaulted]: ScaLogOp DependOnCols(0)('auto_loan_securitisation_data'[IsDefaulted]) Boolean DominantValue=NONE",
+      "Level": 6,
+      "RowNumber": 13,
+      "NextSiblingRowNumber": 13
+    },
+    {
+      "Operation": "Constant: ScaLogOp MeasureRef=[Total Loans] DependOnCols()() Integer DominantValue=500",
+      "IndentedOperation": "                Constant: ScaLogOp MeasureRef=[Total Loans] DependOnCols()() Integer DominantValue=500",
+      "Level": 4,
+      "RowNumber": 14,
+      "NextSiblingRowNumber": 14
+    },
+    {
+      "Operation": "Subtract: ScaLogOp MeasureRef=[LGD] DependOnCols()() Double DominantValue=1",
+      "IndentedOperation": "            Subtract: ScaLogOp MeasureRef=[LGD] DependOnCols()() Double DominantValue=1",
+      "Level": 3,
+      "RowNumber": 15,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Operation": "Constant: ScaLogOp DependOnCols()() Integer DominantValue=1",
+      "IndentedOperation": "                Constant: ScaLogOp DependOnCols()() Integer DominantValue=1",
+      "Level": 4,
+      "RowNumber": 16,
+      "NextSiblingRowNumber": 16
+    },
+    {
+      "Operation": "Divide: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "                Divide: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "Level": 4,
+      "RowNumber": 17,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Operation": "Sum_Vertipaq: ScaLogOp MeasureRef=[Total Recovery Amount] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "                    Sum_Vertipaq: ScaLogOp MeasureRef=[Total Recovery Amount] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 5,
+      "RowNumber": 18,
+      "NextSiblingRowNumber": 21
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-104 RequiredCols(54)('auto_loan_securitisation_data'[RecoveryAmount])",
+      "IndentedOperation": "                        Scan_Vertipaq: RelLogOp DependOnCols()() 0-104 RequiredCols(54)('auto_loan_securitisation_data'[RecoveryAmount])",
+      "Level": 6,
+      "RowNumber": 19,
+      "NextSiblingRowNumber": 19
+    },
+    {
+      "Operation": "'auto_loan_securitisation_data'[RecoveryAmount]: ScaLogOp DependOnCols(54)('auto_loan_securitisation_data'[RecoveryAmount]) Double DominantValue=NONE",
+      "IndentedOperation": "                        'auto_loan_securitisation_data'[RecoveryAmount]: ScaLogOp DependOnCols(54)('auto_loan_securitisation_data'[RecoveryAmount]) Double DominantValue=NONE",
+      "Level": 6,
+      "RowNumber": 20,
+      "NextSiblingRowNumber": 20
+    },
+    {
+      "Operation": "Calculate: ScaLogOp MeasureRef=[Defaulted Balance] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "                    Calculate: ScaLogOp MeasureRef=[Defaulted Balance] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 5,
+      "RowNumber": 21,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Operation": "Sum_Vertipaq: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "                        Sum_Vertipaq: ScaLogOp DependOnCols()() Double DominantValue=BLANK",
+      "Level": 6,
+      "RowNumber": 22,
+      "NextSiblingRowNumber": 25
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 1-105 RequiredCols(18)('auto_loan_securitisation_data'[CurrentBalance])",
+      "IndentedOperation": "                            Scan_Vertipaq: RelLogOp DependOnCols()() 1-105 RequiredCols(18)('auto_loan_securitisation_data'[CurrentBalance])",
+      "Level": 7,
+      "RowNumber": 23,
+      "NextSiblingRowNumber": 23
+    },
+    {
+      "Operation": "'auto_loan_securitisation_data'[CurrentBalance]: ScaLogOp DependOnCols(18)('auto_loan_securitisation_data'[CurrentBalance]) Double DominantValue=NONE",
+      "IndentedOperation": "                            'auto_loan_securitisation_data'[CurrentBalance]: ScaLogOp DependOnCols(18)('auto_loan_securitisation_data'[CurrentBalance]) Double DominantValue=NONE",
+      "Level": 7,
+      "RowNumber": 24,
+      "NextSiblingRowNumber": 24
+    },
+    {
+      "Operation": "Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "IndentedOperation": "                        Filter_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "Level": 6,
+      "RowNumber": 25,
+      "NextSiblingRowNumber": 28
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "IndentedOperation": "                            Scan_Vertipaq: RelLogOp DependOnCols()() 0-0 RequiredCols(0)('auto_loan_securitisation_data'[IsDefaulted])",
+      "Level": 7,
+      "RowNumber": 26,
+      "NextSiblingRowNumber": 26
+    },
+    {
+      "Operation": "'auto_loan_securitisation_data'[IsDefaulted]: ScaLogOp DependOnCols(0)('auto_loan_securitisation_data'[IsDefaulted]) Boolean DominantValue=NONE",
+      "IndentedOperation": "                            'auto_loan_securitisation_data'[IsDefaulted]: ScaLogOp DependOnCols(0)('auto_loan_securitisation_data'[IsDefaulted]) Boolean DominantValue=NONE",
+      "Level": 7,
+      "RowNumber": 27,
+      "NextSiblingRowNumber": 27
+    },
+    {
+      "Operation": "Sum_Vertipaq: ScaLogOp MeasureRef=[Total EAD] DependOnCols()() Double DominantValue=BLANK",
+      "IndentedOperation": "        Sum_Vertipaq: ScaLogOp MeasureRef=[Total EAD] DependOnCols()() Double DominantValue=BLANK",
+      "Level": 2,
+      "RowNumber": 28,
+      "NextSiblingRowNumber": 31
+    },
+    {
+      "Operation": "Scan_Vertipaq: RelLogOp DependOnCols()() 0-104 RequiredCols(48)('auto_loan_securitisation_data'[EAD])",
+      "IndentedOperation": "            Scan_Vertipaq: RelLogOp DependOnCols()() 0-104 RequiredCols(48)('auto_loan_securitisation_data'[EAD])",
+      "Level": 3,
+      "RowNumber": 29,
+      "NextSiblingRowNumber": 29
+    },
+    {
+      "Operation": "'auto_loan_securitisation_data'[EAD]: ScaLogOp DependOnCols(48)('auto_loan_securitisation_data'[EAD]) Double DominantValue=NONE",
+      "IndentedOperation": "            'auto_loan_securitisation_data'[EAD]: ScaLogOp DependOnCols(48)('auto_loan_securitisation_data'[EAD]) Double DominantValue=NONE",
+      "Level": 3,
+      "RowNumber": 30,
+      "NextSiblingRowNumber": 31
+    }
+  ],
+  "ActivityID": "9370AED8-518B-4459-AA23-C9C51E49A11B",
+  "RequestID": "FB2CFC95-2AAD-41A7-9499-3D8DA514C6B6",
+  "CommandText": "EVALUATE\nROW(\n    \"Total EAD\", [Total EAD],\n    \"12M PD\", [12M PD],\n    \"LGD\", [LGD],\n    \"DAX ECL\", [ECL]\n)",
+  "Parameters": null,
+  "StartDatetime": "2026-09-29T03:09:55.216667+05:30"
+}
